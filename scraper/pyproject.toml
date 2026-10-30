@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proteindex-scraper"
+version = "0.2.0"
+description = "High-precision normalization, thermodynamic verification, and ingestion pipeline for ProteIndex V2"
+authors = [{ name = "ProteIndex Data Platform Team" }]
+dependencies = [
+    "beautifulsoup4>=4.12.0",
+    "curl_cffi>=0.7.0",
+    "pydantic>=2.10.0",
+    "python-dotenv>=1.0.0",
+    "rapidfuzz>=3.10.0",
+    "supabase>=2.11.0",
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

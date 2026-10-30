@@ -1,0 +1,62 @@
+{
+  "Optimum Nutrition": {
+    "aliases": ["on", "optimum nutrition", "glanbia optimum nutrition"],
+    "verified_fssai": "10015064000576",
+    "country_of_origin": "US/IN",
+    "tier": "gold"
+  },
+  "MuscleBlaze": {
+    "aliases": ["muscleblaze", "mb", "bright lifesciences"],
+    "verified_fssai": "10015064000019",
+    "country_of_origin": "IN",
+    "tier": "gold"
+  },
+  "Avvatar": {
+    "aliases": ["avvatar", "parag milk foods"],
+    "verified_fssai": "10012022001320",
+    "country_of_origin": "IN",
+    "tier": "gold"
+  },
+  "As-It-Is Nutrition": {
+    "aliases": ["as-it-is", "asitis", "medizen labs"],
+    "verified_fssai": "10018043002345",
+    "country_of_origin": "IN",
+    "tier": "silver"
+  },
+  "Nakpro": {
+    "aliases": ["nakpro", "nakpro nutrition"],
+    "verified_fssai": "11220333000678",
+    "country_of_origin": "IN",
+    "tier": "silver"
+  },
+  "The Whole Truth": {
+    "aliases": ["the whole truth", "twt", "fitshit health"],
+    "verified_fssai": "11521999000123",
+    "country_of_origin": "IN",
+    "tier": "gold"
+  },
+  "Dymatize": {
+    "aliases": ["dymatize", "bellring brands dymatize"],
+    "verified_fssai": "10016022005193",
+    "country_of_origin": "US",
+    "tier": "gold"
+  },
+  "Myprotein": {
+    "aliases": ["myprotein", "thg myprotein"],
+    "verified_fssai": "10019022009876",
+    "country_of_origin": "UK/IN",
+    "tier": "silver"
+  },
+  "GNC": {
+    "aliases": ["gnc", "general nutrition centers", "guardian healthcare"],
+    "verified_fssai": "10016011003861",
+    "country_of_origin": "US/IN",
+    "tier": "silver"
+  },
+  "Atom": {
+    "aliases": ["atom", "asitis atom"],
+    "verified_fssai": "10018043002345",
+    "country_of_origin": "IN",
+    "tier": "bronze"
+  }
+}

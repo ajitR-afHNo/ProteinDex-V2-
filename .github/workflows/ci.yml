@@ -1,0 +1,50 @@
+name: ProteIndex CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scraper/requirements.txt
+      - name: Run Anti-Slop Audit
+        run: python scripts/anti_slop_check.py
+      - name: Run Pytest Suite
+        run: python -m pytest scraper/tests -v
+
+  build-client:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+          cache-dependency-path: client/package-lock.json
+      - name: Install dependencies
+        working-directory: client
+        run: npm ci
+      - name: TypeScript Typecheck
+        working-directory: client
+        run: npm run typecheck
+      - name: Build Next.js
+        working-directory: client
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: "https://mock.supabase.co"
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: "mock-key"
+          SUPABASE_SERVICE_ROLE_KEY: "mock-service-role-key"
+          URL_SIGNING_SECRET: "32-character-mock-secret-for-ci-build-pass"
+        run: npm run build
